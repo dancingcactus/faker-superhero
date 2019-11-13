@@ -24,7 +24,26 @@ class Provider(BaseProvider):
         nouns = MALE_NOUNS + FEMALE_NOUNS + NEUTRAL_NOUNS
         return f'{self.random_element(ADJECTIVES)} {self.random_element(nouns)}'
 
+    def _male(self):
+        nouns = MALE_NOUNS + NEUTRAL_NOUNS
+        return f'{self.random_element(ADJECTIVES)} {self.random_element(nouns)}'
+    
+    def _female(self):
+        nouns = FEMALE_NOUNS + NEUTRAL_NOUNS
+        return f'{self.random_element(ADJECTIVES)} {self.random_element(nouns)}'
+    
+    def _neutral(self):
+        nouns = NEUTRAL_NOUNS
+        return f'{self.random_element(ADJECTIVES)} {self.random_element(nouns)}'
+
     def superhero(self, gender=False):
         """ Fake Super Hero Names """
-        if gender is False:
+        if gender :
+            if str(gender).lower() == "male":
+                return self._male()
+            elif str(gender).lower() == "female":
+                return self._female()
+            elif str(gender).lower() == "neutral":
+                return self._neutral()
+        else:
             return self._no_gender()
