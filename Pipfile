@@ -7,6 +7,7 @@ verify_ssl = true
 v = {editable = true,version = "*"}
 pytest = "*"
 codecov = "*"
+pytest-cov = "*"
 
 [packages]
 faker = "*"

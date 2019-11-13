@@ -37,7 +37,7 @@ class IntegrationTestCase(unittest.TestCase):
         self.assertIsInstance(female, str, "Returns wrong type of variable")
         self.assertIn(" ", female, "No space in name")
         noun = female.split(" ")[1]
-        self.assertNotIn(noun, faker_superhero.FEMALE_NOUNS)
+        self.assertNotIn(noun, faker_superhero.MALE_NOUNS)
 
     def test_neutral(self):
         """Test Male Super Hero Names """
