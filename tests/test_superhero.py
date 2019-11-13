@@ -2,8 +2,10 @@
 
 import pytest
 import unittest
+import subprocess
 from faker import Faker, Generator
 import faker_superhero
+
 
 __author__ = "Justin Grover"
 __copyright__ = "Justin Grover"
@@ -47,6 +49,10 @@ class IntegrationTestCase(unittest.TestCase):
         noun = neutral.split(" ")[1]
         self.assertNotIn(noun, faker_superhero.MALE_NOUNS)
         self.assertNotIn(noun, faker_superhero.MALE_NOUNS)
+    
+    def test_command_line(self):
+        data = subprocess.check_output(["pipenv","run","faker","superhero","-i", "faker_superhero"])
+        self.assertGreater(len(data),3)
 
 if __name__ == '__main__':
     unittest.main()
