@@ -50,6 +50,7 @@ class IntegrationTestCase(unittest.TestCase):
         self.assertNotIn(noun, faker_superhero.MALE_NOUNS)
         self.assertNotIn(noun, faker_superhero.MALE_NOUNS)
     
+    @unittest.skip("Skip")
     def test_command_line(self):
         data = subprocess.check_output(["pipenv","run","faker","superhero","-i", "faker_superhero"])
         self.assertGreater(len(data),3)
