@@ -1,4 +1,5 @@
 # Fake Superhero Name Generator
+[![Build Status](https://travis-ci.org/dancingcactus/faker-superhero.svg?branch=master)](https://travis-ci.org/dancingcactus/faker-superhero)
 
 Provider for [Faker](https://faker.readthedocs.io/en/master/) adds fake superhero names. Find your next super hero name with library.
 
